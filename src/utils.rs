@@ -1,3 +1,4 @@
+use tabled::builder::Builder;
 use clipboard::{ClipboardContext, ClipboardProvider};
 use rand::Rng;
 
@@ -20,6 +21,7 @@ pub fn suggester(val: &str) -> Result<Vec<String>, Box<dyn std::error::Error + S
         "set",
         "delete",
         "list",
+        "search",
         "help",
         "exit",
     ];
@@ -31,4 +33,18 @@ pub fn suggester(val: &str) -> Result<Vec<String>, Box<dyn std::error::Error + S
         .filter(|s| s.to_lowercase().contains(&val_lower))
         .map(|s| String::from(*s))
         .collect())
+}
+
+
+pub fn get_table() -> tabled::builder::Builder {
+    let mut builder = Builder::default();
+    builder.set_header(
+        vec![
+            "Key".to_string(),
+            "Value".to_string(),
+            "Hash".to_string(),
+            "Created At".to_string(),
+        ]
+    );
+    builder
 }

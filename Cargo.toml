@@ -1,5 +1,5 @@
 [package]
-name = "key"
+name = "nkv"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,9 +7,8 @@ edition = "2021"
 
 [dependencies]
 clap = {version = "4.3.23", features = ["derive"]}
-sqlx = { version = "0.7", features = [ "runtime-tokio", "sqlite", "json" ] }
+sqlx = { version = "0.7", features = [ "runtime-tokio", "sqlite" ] }
 serde = {version = "*", features=["derive"]}
-serde_json = {version="*", features = ["preserve_order"]}
 bunt = "*"
 inquire = "*"
 tokio = {version="*", features=["full"]}
@@ -17,3 +16,5 @@ chrono = "*"
 clipboard = { version = "0.5.0"}
 rand = "*"
 dotenv = {version="*"}
+tabled ={ version="*"}
+human-panic = "*"
