@@ -1,0 +1,19 @@
+[package]
+name = "key"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = {version = "4.3.23", features = ["derive"]}
+sqlx = { version = "0.7", features = [ "runtime-tokio", "sqlite", "json" ] }
+serde = {version = "*", features=["derive"]}
+serde_json = {version="*", features = ["preserve_order"]}
+bunt = "*"
+inquire = "*"
+tokio = {version="*", features=["full"]}
+chrono = "*"
+clipboard = { version = "0.5.0"}
+rand = "*"
+dotenv = {version="*"}
